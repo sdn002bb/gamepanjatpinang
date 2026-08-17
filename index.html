@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panjat Pinang Matematika 🌴</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="pinang-tree" viewBox="0 0 200 240">
+      <defs>
+        <linearGradient id="pTrunk" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#a06a2e"/>
+          <stop offset="55%" stop-color="#bf8242"/>
+          <stop offset="100%" stop-color="#7a4d22"/>
+        </linearGradient>
+        <g id="pLeaf">
+          <path d="M0,0 C20,-16 40,-46 47,-82 C18,-68 5,-40 0,0 Z" fill="#3e9a2f"/>
+          <path d="M0,0 C10,-12 26,-34 34,-62" stroke="#2e7d23" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </g>
+      </defs>
+      <ellipse cx="100" cy="231" rx="72" ry="10" fill="#8bd24a"/>
+      <ellipse cx="100" cy="233" rx="64" ry="7" fill="#6fce3c"/>
+      <path d="M85,230 C83,186 89,152 93,118 L107,118 C111,152 117,186 115,230 Z" fill="url(#pTrunk)"/>
+      <path d="M85,208 q15,6 30,0" stroke="#6f4418" stroke-width="3" fill="none" opacity=".55" stroke-linecap="round"/>
+      <path d="M86,184 q14,5 28,0" stroke="#6f4418" stroke-width="3" fill="none" opacity=".55" stroke-linecap="round"/>
+      <path d="M88,160 q12,4 24,0" stroke="#6f4418" stroke-width="3" fill="none" opacity=".55" stroke-linecap="round"/>
+      <path d="M90,138 q10,3 20,0" stroke="#6f4418" stroke-width="3" fill="none" opacity=".55" stroke-linecap="round"/>
+      <g transform="translate(100,118)">
+        <use href="#pLeaf" transform="rotate(-132)"/>
+        <use href="#pLeaf" transform="rotate(-96)"/>
+        <use href="#pLeaf" transform="rotate(-58)"/>
+        <use href="#pLeaf" transform="rotate(-20)"/>
+        <use href="#pLeaf" transform="rotate(20)"/>
+        <use href="#pLeaf" transform="rotate(58)"/>
+        <use href="#pLeaf" transform="rotate(96)"/>
+        <use href="#pLeaf" transform="rotate(132)"/>
+        <use href="#pLeaf" transform="rotate(-78) scale(0.7)"/>
+        <use href="#pLeaf" transform="rotate(-38) scale(0.7)"/>
+        <use href="#pLeaf" transform="rotate(38) scale(0.7)"/>
+        <use href="#pLeaf" transform="rotate(78) scale(0.7)"/>
+        <circle r="10" fill="#8a5a2b"/>
+        <ellipse cx="-13" cy="5" rx="7" ry="10" fill="#e8542b" transform="rotate(12)"/>
+        <ellipse cx="13" cy="7" rx="6" ry="9" fill="#f97444" transform="rotate(-14)"/>
+        <ellipse cx="0" cy="16" rx="7" ry="10" fill="#ff8a50"/>
+      </g>
+      <circle cx="96" cy="177" r="3.2" fill="#3b2314"/>
+      <circle cx="106" cy="177" r="3.2" fill="#3b2314"/>
+      <circle cx="97" cy="176" r="1" fill="#fff"/>
+      <circle cx="107" cy="176" r="1" fill="#fff"/>
+      <path d="M94,184 Q101,190 108,184" stroke="#3b2314" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="91" cy="182" r="3.5" fill="#ff9fb0" opacity=".6"/>
+      <circle cx="111" cy="182" r="3.5" fill="#ff9fb0" opacity=".6"/>
+    </symbol>
+  </svg>
+
+  <!-- ================= MENU SCREEN ================= -->
+  <section id="screen-menu" class="screen">
+    <div class="menu-card">
+      <div class="menu-title">
+        <svg class="pinang-logo" viewBox="0 0 200 240"><use href="#pinang-tree"/></svg>
+        <h1>Panjat Pinang Matematika</h1>
+        <p class="subtitle">Siapa yang duluan sampai ke puncak dan meraih hadiahnya? 🏆</p>
+      </div>
+
+      <div class="menu-section">
+        <h2 class="section-title">Mode Permainan 🎮</h2>
+        <div id="mode-buttons" class="mode-grid"></div>
+      </div>
+
+      <div class="menu-section">
+        <h2 class="section-title">Pilih Jenis Soal 📚</h2>
+        <div id="op-buttons" class="op-grid"></div>
+      </div>
+
+      <div class="menu-section">
+        <h2 class="section-title">Batasan Waktu ⏱️</h2>
+        <div id="time-buttons" class="time-grid"></div>
+      </div>
+
+      <div class="menu-section">
+        <h2 class="section-title">Tingkat Kesulitan 🎯</h2>
+        <div id="diff-buttons" class="diff-grid"></div>
+      </div>
+
+      <div class="menu-section players">
+        <div class="player-input box-1">
+          <label class="p1-label">👦 Pemain 1</label>
+          <input id="name-1" maxlength="12" placeholder="Raka" autocomplete="off">
+        </div>
+        <div class="vs">VS</div>
+        <div class="player-input box-2">
+          <label class="p2-label">👧 Pemain 2</label>
+          <input id="name-2" maxlength="12" placeholder="Sari" autocomplete="off">
+        </div>
+      </div>
+
+      <button id="btn-start" class="btn-start" disabled>🚀 Mulai Main!</button>
+      <p class="hint">Jawaban benar = naik 1 tingkat · salah = turun 1 tingkat 😄</p>
+    </div>
+  </section>
+
+  <!-- ================= GAME SCREEN ================= -->
+  <section id="screen-game" class="screen hidden">
+    <header class="game-header">
+      <div class="title-box">
+        <h1><svg class="pinang-logo small" viewBox="0 0 200 240"><use href="#pinang-tree"/></svg>Panjat Pinang Matematika</h1>
+        <div id="op-badge" class="op-badge">➕ Penjumlahan</div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-sound" class="icon-btn" title="Nyalakan/matikan suara">🔊</button>
+        <button id="btn-exit" class="icon-btn" title="Kembali ke menu">🏠</button>
+      </div>
+    </header>
+
+    <div class="game-layout">
+      <aside id="panel-p1" class="player-panel panel-1">
+        <div class="p-avatar">👦</div>
+        <div id="p1-name" class="p-name">Pemain 1</div>
+        <div class="p-stars"><span id="p1-correct">0</span> ⭐ benar</div>
+        <div class="p-progress">
+          <div class="prog-bar"><div id="p1-prog" class="prog-fill"></div></div>
+          <span id="p1-count" class="prog-label">Soal 0/10</span>
+        </div>
+        <div id="p1-status" class="p-status">🛖 Siap di bawah</div>
+      </aside>
+
+      <main class="arena-wrap">
+        <svg id="arena" viewBox="0 0 1000 720" preserveAspectRatio="xMidYMax meet"></svg>
+      </main>
+
+      <aside id="panel-p2" class="player-panel panel-2">
+        <div class="p-avatar">👧</div>
+        <div id="p2-name" class="p-name">Pemain 2</div>
+        <div class="p-stars"><span id="p2-correct">0</span> ⭐ benar</div>
+        <div class="p-progress">
+          <div class="prog-bar"><div id="p2-prog" class="prog-fill"></div></div>
+          <span id="p2-count" class="prog-label">Soal 0/10</span>
+        </div>
+        <div id="p2-status" class="p-status">🛖 Siap di bawah</div>
+      </aside>
+    </div>
+
+    <footer class="question-panel" id="question-panel">
+      <div class="qp-side qp-side-1">
+        <div class="qp-pname" id="qp-name-1">Pemain 1</div>
+        <div id="opts-p1" class="qp-opts"></div>
+      </div>
+      <div class="qp-center">
+        <div id="turn-banner" class="turn-banner hidden"></div>
+        <div id="question-text" class="question-text">?</div>
+        <div id="timer-wrap" class="timer-wrap hidden">
+          <svg class="timer-ring" viewBox="0 0 60 60">
+            <circle class="timer-ring-bg" cx="30" cy="30" r="25"/>
+            <circle id="timer-ring-fill" class="timer-ring-fill" cx="30" cy="30" r="25"/>
+          </svg>
+          <span id="timer-label" class="timer-label">20</span>
+        </div>
+        <div id="opts-shared" class="qp-opts opts-shared hidden"></div>
+        <div id="feedback" class="feedback"></div>
+        <div id="qnum" class="qnum"></div>
+      </div>
+      <div class="qp-side qp-side-2">
+        <div class="qp-pname" id="qp-name-2">Pemain 2</div>
+        <div id="opts-p2" class="qp-opts"></div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ================= WIN OVERLAY ================= -->
+  <div id="win-overlay" class="overlay hidden">
+    <div class="win-card">
+      <div id="win-avatar" class="win-avatar">🏆</div>
+      <h1 id="win-title">Menang!</h1>
+      <p id="win-message">Hebat sekali!</p>
+      <div id="win-prize" class="win-prize">🎁</div>
+      <p class="win-prize-label">Hadiah untuk pemenang!</p>
+      <div class="win-buttons">
+        <button id="btn-again" class="btn-win">🔄 Main Lagi</button>
+        <button id="btn-change" class="btn-win alt">🎯 Ganti Soal</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confetti" class="confetti hidden"></div>
+
+<script src="game.js"></script>
+</body>
+</html>
